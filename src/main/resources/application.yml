@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5433/simplecrud
+    password: simplecrud
+    username: simplecrud
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://database:5432/simplecrud
+    password: simplecrud
+    username: simplecrud

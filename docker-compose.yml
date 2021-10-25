@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:13-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: simplecrud
+      POSTGRES_PASSWORD: simplecrud
+      POSTGRES_DB: simplecrud
+  api:
+    image: fourpixelit/simplecrud-java:x86
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
